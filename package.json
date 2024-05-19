@@ -1,20 +1,21 @@
 {
-  "name": "@mpaperno/skia-canvas",
+  "name": "@artofwhere/skia-canvas",
   "version": "1.1.1-mp",
   "description": "A Canvas Graphics API for Node based on Skia",
   "author": "Christian Swinehart <drafting@samizdat.co>",
   "contributors": [
-    "Maxim Paperno (https://github.com/mpaperno)"
+    "Maxim Paperno (https://github.com/mpaperno)",
+    "Art of Where (https://github.com/artofwhere)"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mpaperno/skia-canvas.git"
+    "url": "git+https://github.com/artofwhere/skia-canvas.git"
   },
   "bugs": {
-    "url": "https://github.com/mpaperno/skia-canvas/issues"
+    "url": "https://github.com/artofwhere/skia-canvas/issues"
   },
-  "homepage": "https://github.com/mpaperno/skia-canvas#readme",
+  "homepage": "https://github.com/artofwhere/skia-canvas#readme",
   "main": "lib",
   "browser": {
     "lib": "./lib/browser.js",
@@ -54,7 +55,7 @@
     "module_path": "./lib/v{napi_build_version}",
     "remote_path": "v{version}",
     "package_name": "{platform}-{arch}-{node_napi_label}-{libc}.tar.gz",
-    "host": "https://github.com/mpaperno/skia-canvas/releases/download/",
+    "host": "https://github.com/artofwhere/skia-canvas/releases/download/",
     "napi_versions": [
       6
     ]
