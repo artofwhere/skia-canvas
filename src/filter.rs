@@ -111,8 +111,12 @@ impl Filter {
                 *val = (127.0 + amt * orig - (127.0 * amt )) as u8;
               }
               let table = Some(&ramp);
-              let color_table = table_color_filter::from_argb(None, table, table, table);
-              image_filters::color_filter(color_table, chain, None)
+              let color_table = color_filters::table_argb(None, table, table, table);
+              //TODO: Should throw some kind of error instead
+              match color_table {
+                Some(value) => image_filters::color_filter(value, chain, None),
+                None => chain
+              }
             },
             "grayscale" => {
               let amt = 1.0 - value.max(0.0).min(1.0);
@@ -132,8 +136,13 @@ impl Filter {
                 *val = (orig * (1.0 - amt) + inv * amt) as u8;
               }
               let table = Some(&ramp);
-              let color_table = table_color_filter::from_argb(None, table, table, table);
-              image_filters::color_filter(color_table, chain, None)
+              let color_table = color_filters::table_argb(None, table, table, table);
+
+              //TODO: Should throw some kind of error instead
+              match color_table {
+                Some(value) => image_filters::color_filter(value, chain, None),
+                None => chain
+              }
             },
             "opacity" => {
               let amt = value.max(0.0).min(1.0);
